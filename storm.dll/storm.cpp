@@ -38,6 +38,12 @@ BOOL WINAPI SFILE(OpenFile)(LPCSTR lpFileName, HANDLE *hFile)
     return FALSE;
 }
 
+BOOL WINAPI SFILE(OpenFileArchive)(HANDLE hParentMPQ, char * szFileName, DWORD dwPriority, DWORD dwFlags, HANDLE * hMPQ)
+{
+    SetLastError(ERROR_CALL_NOT_IMPLEMENTED);
+    return FALSE;
+}
+
 BOOL WINAPI SFILE(OpenFileEx)(HANDLE hMPQ, LPCSTR lpFileName, DWORD dwSearchScope, HANDLE *hFile)
 {
     SetLastError(ERROR_CALL_NOT_IMPLEMENTED);
@@ -50,13 +56,13 @@ BOOL WINAPI SFILE(CloseFile)(HANDLE hFile)
     return FALSE;
 }
 
-DWORD WINAPI SFILE(GetFileSize)(HANDLE hFile, LPDWORD lpFileSizeHigh)
+BOOL WINAPI SFILE(GetFileArchive)(HANDLE hFile, HANDLE * hMPQ)
 {
     SetLastError(ERROR_CALL_NOT_IMPLEMENTED);
     return FALSE;
 }
 
-BOOL WINAPI SFILE(GetFileArchive)(HANDLE hFile, HANDLE *hMPQ)
+DWORD WINAPI SFILE(GetFileSize)(HANDLE hFile, LPDWORD lpFileSizeHigh)
 {
     SetLastError(ERROR_CALL_NOT_IMPLEMENTED);
     return FALSE;
@@ -99,6 +105,12 @@ BOOL WINAPI SFILE(SetBasePath)(LPCSTR lpNewBasePath)
 }
 
 BOOL WINAPI SFILE(Destroy)()
+{
+    SetLastError(ERROR_CALL_NOT_IMPLEMENTED);
+    return FALSE;
+}
+
+BOOL WINAPI SERR(SetLastError)()
 {
     SetLastError(ERROR_CALL_NOT_IMPLEMENTED);
     return FALSE;
